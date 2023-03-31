@@ -1,0 +1,56 @@
+body {
+    background: grey;
+    margin-left: auto;
+}
+#app {
+    width: 50%;
+    background-color: aliceblue;
+    border: 3px solid black;
+}
+#add {
+    width: 50%;
+    margin-left: 15px;
+}
+button {
+    margin-left: 15px;
+    border-radius: 10%;
+}
+#addButton {
+    background-color: orange;
+}
+h1, h2 {
+    margin-left: 15px;
+}
+p {
+    margin-left: 15px;
+} #container {
+    display: flex;
+    justify-content: space-around;
+}
+#todosCompleted {
+    width: 45%;
+    background-color: aliceblue;
+    border: 3px solid black;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+#finalizar {
+    background-color: green;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+#eliminar {
+    background-color: red;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-content: space-around;
+}

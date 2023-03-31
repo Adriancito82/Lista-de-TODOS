@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./main.js" defer></script>
+    <title>Lista de tareas con VueJS</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="app">
+            <h1>Bienvenido {{ name }}</h1>
+            <h2>{{ message }}</h2>
+
+            <input id="add" type="text" v-model="newTodo.text" @keydown.enter.prevent="addTodo">
+
+            <button id="addButton" @click="addTodo">Añadir tarea</button>
+
+            <p v-if="arr.length === 0">No hay tareas pendientes</p>
+
+            <ul v-else>
+                <li :class="[(elem.done === true) ? 'green' : 'red']" v-for="(elem, index) in arr" :key="index">
+                    {{elem.text }} - {{ elem.done }}
+                    <button id="finalizar" @click="doneTrue(index)" @click="todosFinish()">Finalizar</button>
+                    <button id="eliminar" @click="removeTodo(index)">Eliminar</button>
+                </li>
+            </ul>
+
+            <p>Tareas del Día: {{ pendingTasks }}</p>
+        </div>
+
+        <div id="todosCompleted">
+            <h2>{{ message }}</h2>
+            <ul>
+                <li v-for="(elem) in arr2">{{ elem.text }} - {{ elem.done }}</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
