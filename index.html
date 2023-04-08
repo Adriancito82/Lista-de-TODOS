@@ -25,21 +25,25 @@
             <p v-if="arr.length === 0">No hay tareas pendientes</p>
 
             <ul v-else>
-                <li :class="[(elem.done === true) ? 'green' : 'red']" v-for="(elem, index) in arr" :key="index">
-                    {{elem.text }} - {{ elem.done }}
-                    <button id="finalizar" @click="doneTrue(index)" @click="todosFinish()">Finalizar</button>
+                <li :class="[(elem.done === true) ? 'green' : 'red']" v-for="(elem, index) in showTask" :key="index">
+                    <h3>{{elem.text }} - {{ elem.done }}</h3>
+                    <button id="finalizar" @click="doneTrue(index)">Finalizar</button>
                     <button id="eliminar" @click="removeTodo(index)">Eliminar</button>
                 </li>
             </ul>
 
             <p>Tareas del Día: {{ pendingTasks }}</p>
-        </div>
 
-        <div id="todosCompleted">
-            <h2>{{ message }}</h2>
-            <ul>
-                <li v-for="(elem) in arr2">{{ elem.text }} - {{ elem.done }}</li>
-            </ul>
+            <div>
+                <h2>{{ message2 }}</h2>
+                <ul>
+                    <li v-for="(elem) in showPendingTask">
+                        <h3>{{ elem.text }} - {{ elem.done }}</h3>
+                    </li>
+                </ul>
+
+                <p>Tareas del día Completadas: {{ showPendingTask.length }}</p>
+            </div>
         </div>
 
     </div>

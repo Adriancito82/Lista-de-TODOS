@@ -4,16 +4,26 @@ const app = createApp({
 	data() {
 		return {
 			name: 'Adrián Santana Suárez',
-			message: 'Tareas Pendientes',
+            message: 'Tareas Pendientes',
+            message2: 'Tareas del día Completadas',
 			arr: [],
-			arr2: [],
 			newTodo: { text: '', done: false },
 		}
 	},
 	computed: {
 		pendingTasks: function () {
 			return this.arr.length
-		},
+        },
+        showPendingTask: function () {
+            let arr2 = this.arr.filter((elem) => {
+                elem.done === false
+            })
+            return arr2
+
+        },
+        showTask: function () {
+            return this.arr
+        }
 	},
 	methods: {
 		addTodo() {
@@ -28,16 +38,3 @@ const app = createApp({
 		},
 	},
 }).mount('#app')
-
-const todosCompleted = createApp({
-	data() {
-		return {
-			message: 'Tareas Completadas',
-		}
-	},
-	methods: {
-        todosFinish() {
-            (this.arr = this.newTodo.done === true) ? this.arr2.push(this.arr) : false
-		},
-	},
-}).mount('#todosCompleted')
