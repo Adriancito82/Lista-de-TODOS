@@ -23,11 +23,12 @@ h1, h2 {
 }
 p {
     margin-left: 15px;
-} #container {
+}
+#container {
     display: flex;
     justify-content: space-around;
 }
-/*#todosCompleted {
+/*.todosCompleted {
     width: 45%;
     background-color: aliceblue;
     border: 3px solid black;

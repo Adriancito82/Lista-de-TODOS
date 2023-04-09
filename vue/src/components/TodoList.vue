@@ -1,5 +1,14 @@
 <template>
+<div>
+                <h2>{{ message2 }}</h2>
+                <ul>
+                    <li v-for="(elem) in showPendingTask">
+                        <h2>{{ elem.text }} 👌</h2>
+                    </li>
+                </ul>
 
+                <p>Tareas del día Completadas: {{ showPendingTask.length }}</p>
+            </div>
 </template>
 
 <script>

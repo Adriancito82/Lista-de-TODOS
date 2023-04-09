@@ -28,12 +28,7 @@
 
     <p>Tareas del Día: {{ pendingTasks }}</p>
 
-    <div id="todosCompleted">
-      <h2>{{ message }}</h2>
-      <ul>
-        <li v-for="elem in arr2">{{ elem.text }} - {{ elem.done }}</li>
-      </ul>
-    </div>
+        <TodoList />
   </div>
 </template>
 
@@ -41,7 +36,11 @@
  import TodoList from './components/TodoList.vue'
 
 export default {
-    TodoList,
+    name: 'app',
+    components: {
+       TodoList,
+    }
+
 }
 
 </script>

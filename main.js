@@ -6,7 +6,7 @@ const app = createApp({
 			name: 'Adrián Santana Suárez',
             message: 'Tareas Pendientes',
             message2: 'Tareas del día Completadas',
-			arr: [],
+            arr: [],
 			newTodo: { text: '', done: false },
 		}
 	},
@@ -15,11 +15,10 @@ const app = createApp({
 			return this.arr.length
         },
         showPendingTask: function () {
-            let arr2 = this.arr.filter((elem) => {
-                elem.done === false
+            let arr2 = this.arr.filter(elem => {
+                return elem.done === true
             })
             return arr2
-
         },
         showTask: function () {
             return this.arr
